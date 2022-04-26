@@ -7,12 +7,12 @@ config mongodb://127.0.0.1:27017/mf_test
 ## Inicializar Api Rest
 npm start
 
-## Impornar la collection a Postman
+## Importar la collection a Postman
 Path: Ejercicios_MF/Postman/LocalHost.postman_environment.json
 
 ## environmet Postman
-url_base: http://localhost:3000
-Token: Puedes consultar o generar un nuevo toquen con el metodo de "users/login"
+* url_base: http://localhost:3000
+* Token: Puedes consultar o generar un nuevo toquen con el metodo de "users/login"
 
 ## Metodos 
 # Usuarios
