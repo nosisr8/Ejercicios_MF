@@ -9,7 +9,11 @@ const movimientoSchema = new Schema({
 	tipo: { type: String },
 	monto: { type: Number },
 	fecha: { type: Date },
-	periodo: { type: String }
+	periodo: { type: String },
+	cuenta_from: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Cuenta"
+    },
 });
 
 const Movimiento = mongoose.model("Movimiento", movimientoSchema);

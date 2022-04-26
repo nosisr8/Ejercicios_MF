@@ -9,6 +9,8 @@ const cuentaSchema = new Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
+	trans_token: { type: Number },
+	trans_date:  { type: Date }
 });
 
 cuentaSchema.statics.generateAccount = function(idUser) {

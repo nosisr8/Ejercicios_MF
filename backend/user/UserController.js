@@ -78,7 +78,6 @@ router.post("/login", async function(req, res) {
       req.body.dni,
       req.body.password
     );
-    //const message = await user.message;
     if (user) {
       const token = await user.generateAuthToken();
       res.status(201).json({
@@ -99,9 +98,7 @@ router.post("/logout", auth, async (req, res) => {
   try {
     req.user.tokens = [];
     await req.user.save();
-    res.status("201").json({
-      message: "Success"
-    });
+    res.status(201).json({ message: "Success" });
   } catch (e) {
     res.status(500).send();
   }
