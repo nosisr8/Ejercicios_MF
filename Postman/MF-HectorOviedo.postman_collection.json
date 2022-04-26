@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "e9528f89-f44e-454c-b54f-def9c5652065",
+		"name": "MF-HectorOviedo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"123456\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/login",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/users",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test3\",\r\n    \"dni\": \"1234567\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test3\",\r\n    \"dni\": \"1234567\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/62676bc01ece33d754baaf7a",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"62676bc01ece33d754baaf7a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mis datos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/users/me",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/users/62676bc01ece33d754baaf7a",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"62676bc01ece33d754baaf7a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Generar token transferencia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/cuentas/generarToken",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"cuentas",
+								"generarToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cuentas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/cuentas",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Listar movimientos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/movimientos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Depositar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nro_cuenta\": 923306,\r\n    \"monto\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/movimientos/depositar",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"movimientos",
+								"depositar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extraccion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nro_cuenta\": 923306,\r\n    \"monto\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/movimientos/extraccion",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"movimientos",
+								"extraccion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transferancia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKdVJhblZDX1JmMm1NSHBkWFhzOGxjWXB5S2kzcnBLeXFuT1RPQUxCN0ZVIn0.eyJleHAiOjE2NTEwMDY3NjYsImlhdCI6MTY1MTAwNTg2NiwianRpIjoiNWQyNjg2OTUtNjRjNy00NjM5LTk2MmItZWZkMmJkMmExMWQ4IiwiaXNzIjoiaHR0cHM6Ly9hdXRoLXFhLmJhbmNvbnRpbmVudGFsLmNvbS5weS9hdXRoL3JlYWxtcy9ob21lYmFua2luZyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmOjYwNzlkMzI2LTQ0OTAtNGRiMy05ZmJmLThjYjAxZGIyM2I1YjozNjY3Mjg1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwIiwic2Vzc2lvbl9zdGF0ZSI6ImNlNWU3MjBiLTkxZWItNDYyNC1iYjcyLWFiOTAwMjQ2YjIwMyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUiLCJzaWQiOiJjZTVlNzIwYi05MWViLTQ2MjQtYmI3Mi1hYjkwMDI0NmIyMDMiLCJuYW1lIjoiNjMwMzQzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMzY2NzI4NSIsImNhbmFsIjoiYXBwIiwiZ2l2ZW5fbmFtZSI6IjYzMDM0MyIsInJvbCI6IiIsImNvZGlnb2NsaWVudGUiOiI2MzAzNDMifQ.K8uL0vfpS4UjAWAnBbOnzgBlwjuzQlt2WnYvpMT3bKWNXU4l3V1eziwFLw8rA1PO-Oicoo-Qc26kNSBnkw5g6nsjXZq9oqqrsUpAudyJ_FF6RaQGPW5rtCfb3IHRhnq2n4GLWWwjwmV3niEUgpbN_ucVayHNCCGySJ-qZqOhelp6C1Owm5PRiVGM0ivkJ6P4jmSFgjAP_jZVBSlr--EnqsJvb2dbuJKl8HJ9Q-QqygtmV3ky_w23ENPYK5xsePZ3y4ZLd_kGGUF0_9O2seGymOkNEGswd6m8O3qQFC1RWalOg2pR5hAeBgxlVnQ8dWUnr496JrxSzX1lpD47p19wIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuenta_from\": 12345,\r\n    \"monto\": 1000,\r\n    \"trans_token\" : 5367\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/movimientos/transferencia",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"movimientos",
+								"transferencia"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
