@@ -10,7 +10,7 @@ npm start
 ## Importar la collection a Postman
 Path: Ejercicios_MF/Postman/LocalHost.postman_environment.json
 
-## environmet Postman
+## Environment Postman
 * url_base: http://localhost:3000
 * Token: Puedes consultar o generar un nuevo toquen con el metodo de "users/login"
 
